@@ -1,0 +1,29 @@
+
+<body>
+  {{> addDoor}}
+</body>
+
+<template name="addDoor">
+  <p>Add a door from
+    <select id="fromRoomName">
+      {{#each fromRooms}}
+        {{> fromRoom}}
+      {{/each}}
+    </select>
+
+    to: 
+    <select id="toRoomName">
+      {{#each toRooms}}
+        {{> toRoom}}
+      {{/each}}
+    </select>
+  </p>
+</template>
+
+<template name="fromRoom">
+  <option value="{{name}}">{{name}}</option>
+</template>
+
+<template name="toRoom">
+  <option value="{{name}}">{{name}}</option>
+</template>
