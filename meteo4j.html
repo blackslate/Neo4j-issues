@@ -1,5 +1,15 @@
 
 <body>
+  <p>Run this first in the Neo4j browser at <a href="http://localhost:7474">http://localhost:7474</a></p>
+  <pre>CREATE
+(a:Room {name: "Room 1"})
+-[:DOOR]->
+(b:Room {name: "Room 2"}),
+a-[:DOOR]->
+(c:Room {name: "Room 3"}),
+b-[:DOOR]->a
+RETURN a, b, c</pre>
+
   {{> addDoor}}
 </body>
 
