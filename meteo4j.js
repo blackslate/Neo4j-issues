@@ -13,7 +13,7 @@ var queries = {
     collection: Meteor.neo4j.collection("NewDoorsForRoom")
   , query: 
       "MATCH (entrance:Room), (exit:Room) " +
-      "WHERE entrance.name = '{name}' " +
+      "WHERE entrance.name = {name} " +
       "AND NOT (entrance)-[:DOOR]->(exit) " +
       "AND entrance <> exit " +
       "RETURN exit"
